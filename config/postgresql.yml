@@ -1,0 +1,24 @@
+Default: &defaults
+  user: qvotes
+  password: qvotes
+  host: localhost
+  port: 5432
+  database: qvotes
+  poolsize: 10
+
+Development:
+  <<: *defaults
+
+Testing:
+  database: qvotes_test
+  <<: *defaults
+
+Staging:
+  database: qvotes_staging
+  poolsize: 100
+  <<: *defaults
+
+Production:
+  database: qvotes_production
+  poolsize: 100
+  <<: *defaults
